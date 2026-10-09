@@ -1,54 +1,56 @@
 # Clowl
 
-Mod für Claude Code: eine treudoof schauende Eule über der Eingabe, solange Claude auf die nächste Aufgabe wartet. Sie schaut dich an, blinzelt etwa alle 5 Sekunden (manchmal doppelt) und verschwindet, sobald Claude arbeitet.
+[Deutsch](README_de.md)
 
-- Pixelbild 16 × 16 aus Halbblock-Zeichen (16 Spalten × 8 Zeilen), nur im Terminal.
-- Erscheint nicht während einer Umfrage oder wenn das Band zu klein ist; ausblenden mit `[-]` rechts am Band.
+A mod for Claude Code: a dopey, devoted-looking owl above the prompt while Claude waits for your next task. It looks at you, blinks about every 5 seconds (sometimes twice), and disappears as soon as Claude gets to work.
+
+- 16 × 16 pixel art made of half-block characters (16 columns × 8 rows), terminal only.
+- Hidden while a survey is shown or when the band is too small; dismiss it with `[-]` on the right of the band.
 
 ## Installation
 
-In einer Claude-Code-Sitzung im Terminal eingeben:
+In a Claude Code session in the terminal, type:
 
 ```
 /plugin install clowl --marketplace Carismarkus/clowl
 ```
 
-Die Frage, ob der Marketplace hinzugefügt werden soll, mit `y` beantworten und dann den Geltungsbereich wählen (`user` = in allen Projekten).
+Answer `y` when asked whether to add the marketplace, then choose the scope (`user` = all projects).
 
-## Wie ändere ich den Text?
+## How do I change the text?
 
-Neben der Eule stehen zwei Zeilen: „Hu-hu?“ und darunter, abgedunkelt, „Ich warte auf deine nächste Aufgabe.“ Beide stehen ganz oben in `hooks/register.tsx`:
+Next to the owl there are two lines: "Hu-hu?" ("Hoo-hoo?") and below it, dimmed, "Ich warte auf deine nächste Aufgabe." ("I'm waiting for your next task."). Both are at the very top of `hooks/register.tsx`:
 
 ```ts
 const TEXT = 'Hu-hu?'
 const SUBTEXT = 'Ich warte auf deine nächste Aufgabe.'
 ```
 
-1. Den Mod lokal einbinden, damit Claude Code ihn aus deinem Ordner liest (siehe unten, „Aus einem lokalen Ordner“). Eine Installation aus GitHub liegt in einem Cache von Claude Code; Änderungen dort gehen beim nächsten Update verloren.
-2. Den Text zwischen den einfachen Anführungszeichen ändern und die Datei speichern. Enthält der Text selbst ein `'`, davor einen Backslash setzen: `'Wie geht\'s?'`.
-3. Eine leere Zeile (`''`) wird weggelassen: Mit `SUBTEXT = ''` steht nur eine Zeile neben der Eule.
-4. In Claude Code `/reload-plugins` eingeben. Die Eule zeigt den neuen Text, sobald Claude wieder wartet.
+1. Install the mod from a local folder so Claude Code reads it from your copy (see "From a local folder" below). An installation from GitHub lives in a Claude Code cache; changes made there are lost on the next update.
+2. Change the text between the single quotes and save the file. If the text itself contains a `'`, put a backslash in front of it: `'What\'s up?'`.
+3. An empty line (`''`) is left out: with `SUBTEXT = ''`, only one line appears next to the owl.
+4. Type `/reload-plugins` in Claude Code. The owl shows the new text the next time Claude is waiting.
 
-Das Bild und die Farben stehen in derselben Datei: `OWL` (ein Buchstabe pro Pixel) und `PALETTE` (Farbe pro Buchstabe).
+The picture and colors are in the same file: `OWL` (one letter per pixel) and `PALETTE` (color per letter).
 
-## Aus einem lokalen Ordner
+## From a local folder
 
-Repo klonen oder herunterladen, dann (Pfad anpassen):
+Clone or download the repo, then (adjust the path):
 
 ```
-claude plugin marketplace add "C:\Pfad\zu\clowl"
+claude plugin marketplace add "C:\path\to\clowl"
 ```
 
 ```
 claude plugin install clowl@clowl --scope user
 ```
 
-Änderungen im Ordner lädt `/reload-plugins`.
+`/reload-plugins` picks up changes in the folder.
 
-## Entwicklung
+## Development
 
-- Prüfen: `claude plugin validate .` und `claude plugin test .`
+- Check: `claude plugin validate .` and `claude plugin test .`
 
-## Lizenz
+## License
 
-MIT, siehe [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
