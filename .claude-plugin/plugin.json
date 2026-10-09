@@ -1,0 +1,6 @@
+{
+  "name": "eule",
+  "version": "0.1.0",
+  "description": "Eine treudoof schauende Eule über der Eingabe, solange Claude auf die nächste Aufgabe wartet.",
+  "types": "./types/index.d.ts"
+}
