@@ -4,6 +4,8 @@
 
 A mod for Claude Code: a dopey, devoted-looking owl above the prompt while Claude waits for your next task. It looks at you, blinks about every 5 seconds (sometimes twice), and disappears as soon as Claude gets to work.
 
+![Clowl above the Claude Code prompt: a brown pixel owl with big eyes, next to it "Hu-hu?" and "Ich warte auf deine nächste Aufgabe."](clowl.gif)
+
 - 16 × 16 pixel art made of half-block characters (16 columns × 8 rows), terminal only.
 - Hidden while a survey is shown or when the band is too small; dismiss it with `[-]` on the right of the band.
 

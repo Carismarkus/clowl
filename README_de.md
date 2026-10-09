@@ -4,6 +4,8 @@
 
 Mod für Claude Code: eine treudoof schauende Eule über der Eingabe, solange Claude auf die nächste Aufgabe wartet. Sie schaut dich an, blinzelt etwa alle 5 Sekunden (manchmal doppelt) und verschwindet, sobald Claude arbeitet.
 
+![Clowl über der Eingabe von Claude Code: eine braune Pixel-Eule mit grossen Augen, daneben „Hu-hu?“ und „Ich warte auf deine nächste Aufgabe.“](clowl.gif)
+
 - Pixelbild 16 × 16 aus Halbblock-Zeichen (16 Spalten × 8 Zeilen), nur im Terminal.
 - Erscheint nicht während einer Umfrage oder wenn das Band zu klein ist; ausblenden mit `[-]` rechts am Band.
 
