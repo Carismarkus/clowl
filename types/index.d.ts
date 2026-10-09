@@ -1,7 +1,7 @@
-export type EuleFrame = 'open' | 'blink'
+export type ClowlFrame = 'open' | 'blink'
 
 declare module 'claude-code' {
   interface PluginState {
-    eule: { frame: EuleFrame }
+    clowl: { frame: ClowlFrame }
   }
 }

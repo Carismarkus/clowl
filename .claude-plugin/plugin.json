@@ -1,6 +1,7 @@
 {
-  "name": "eule",
+  "name": "clowl",
   "version": "0.1.0",
-  "description": "Eine treudoof schauende Eule über der Eingabe, solange Claude auf die nächste Aufgabe wartet.",
+  "description": "Clowl: eine treudoof schauende Eule über der Eingabe, solange Claude auf die nächste Aufgabe wartet.",
+  "author": { "name": "Markus" },
   "types": "./types/index.d.ts"
 }

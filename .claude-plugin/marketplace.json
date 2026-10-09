@@ -1,5 +1,6 @@
 {
-  "name": "eule",
+  "name": "clowl",
+  "description": "Clowl, eine Eule über der Eingabe von Claude Code.",
   "owner": { "name": "Markus" },
-  "plugins": [{ "name": "eule", "source": "./" }]
+  "plugins": [{ "name": "clowl", "source": "./" }]
 }

@@ -1,12 +1,16 @@
-// Eule: a dim-witted, loyal owl above the prompt that stares at the user
+// Clowl: a dim-witted, loyal owl above the prompt that stares at the user
 // while Claude waits for the next task, and blinks now and then.
 
 import { atom, read, update } from 'claude-code'
 import type { Register } from 'claude-code'
 
-import type { EuleFrame } from '../types'
+import type { ClowlFrame } from '../types'
 
-const frame = atom({ plugin: 'eule', key: 'frame' } as const, 'open' as EuleFrame)
+// The two lines next to the owl: the first in normal type, the second dimmed.
+const TEXT = 'Hu-hu?'
+const SUBTEXT = 'Ich warte auf deine nächste Aufgabe.'
+
+const frame = atom({ plugin: 'clowl', key: 'frame' } as const, 'open' as ClowlFrame)
 
 // 16 x 16 pixels, two per terminal cell (upper and lower half block).
 const OWL = [
@@ -117,8 +121,8 @@ export const register: Register = on => {
       <Box flexDirection="row">
         <Raster key="owl" columns={COLUMNS} rows={ROWS} cells={shown === 'blink' ? BLINK_CELLS : OPEN_CELLS} />
         <Box flexDirection="column" justifyContent="flex-end" marginLeft={2}>
-          <Text>Hu-hu?</Text>
-          <Text dimColor>Ich warte auf deine nächste Aufgabe.</Text>
+          {TEXT ? <Text>{TEXT}</Text> : null}
+          {SUBTEXT ? <Text dimColor>{SUBTEXT}</Text> : null}
         </Box>
       </Box>
     )

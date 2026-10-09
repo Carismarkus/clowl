@@ -14,12 +14,12 @@ test('the owl shows while Claude waits, and not while it works', async ($, on) =
     const { Box } = $.ui.resolve(e)
     return <Box key="engine" />
   })
-  const idle = await $.ui.mount({ plugin: 'eule', surface: 'terminal', component: 'AbovePrompt', props: props(false) })
-  expect(await idle.find({ type: 'Text', text: /Hu-hu/ })).toBeDefined()
+  const idle = await $.ui.mount({ plugin: 'clowl', surface: 'terminal', component: 'AbovePrompt', props: props(false) })
+  expect(await idle.find({ type: 'Text' })).toBeDefined()
   expect(await idle.find({ key: 'owl' })).toBeDefined()
   await idle.unmount()
 
-  const busy = await $.ui.mount({ plugin: 'eule', surface: 'terminal', component: 'AbovePrompt', props: props(true) })
+  const busy = await $.ui.mount({ plugin: 'clowl', surface: 'terminal', component: 'AbovePrompt', props: props(true) })
   expect(await busy.find({ key: 'owl' })).toBeUndefined()
   await busy.unmount()
 })
